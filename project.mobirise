@@ -26,7 +26,8 @@
         "isRoundedButtons": false,
         "isScrollToTopButton": false,
         "arrowColor": "#4ea2e3"
-      }
+      },
+      "additionalSetColors": []
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.12.4",
@@ -58,6 +59,12 @@
             },
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
+            },
+            ".mbr-section-title": {
+              "color": "#ffffff"
+            },
+            ".mbr-section-subtitle, .mbr-section-btn": {
+              "color": "#ffffff"
             }
           },
           "_name": "header4",
