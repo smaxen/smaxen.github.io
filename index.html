@@ -1,1 +1,76 @@
-<h1>search</h1>
+<!DOCTYPE html>
+
+<style>
+
+  .search {
+    position: relative;
+    width: 900px;
+  }
+
+  input {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    font-size: large;
+    width: 60%;
+    border-width: 0;
+    outline: none;
+  }
+
+  .results {
+    padding-left: 8em;
+    visibility: hidden;
+  }
+  
+  .next {
+    padding-left: 25%;
+    cursor: pointer;
+  }
+
+</style>
+
+<title>Search</title>
+
+<div id="search" class="search">
+  <img src="assets/search.png"/>
+  <input type="text" autofocus/>
+</div>
+
+<div id="results" class="results">
+  <div><a href="https://companionwatch.com" target="chosen"><img src="assets/companion.png"/></a></div>
+  <div><a href="https://www.cprguardian.com/products/cpr-guardian-3" target="chosen"><img src="assets/cprguardian.png"/></a></div>
+  <div style="padding-left: 1%"><a href="https://www.personalalarmwatch.com" target="chosen"><img src="assets/personal-alarm.png"/></a></div>
+</div>
+
+<div id="next" class="next">
+  <img src="assets/next.png"/ onclick="showResults()">
+</div>
+
+
+<script>
+
+function $(x) {return document.getElementById(x);} 
+
+var results = $("results")
+var search = $("search")
+
+function shuffle() { 
+  for (let i = 0; i < 5; i++) {
+    let child = results.children[Math.floor(3*Math.random())];
+    results.appendChild(child);
+  }
+} 
+
+function showResults() { 
+  results.style.visibility = "visible"; 
+  shuffle();
+} 
+
+search.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    showResults();
+  }
+});  
+
+</script>
+
